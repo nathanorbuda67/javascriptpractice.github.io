@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="drip.css">
+</head>
+<body>
+
+  <header id="pageHeader" style="background-color: lightgray; padding: 20px;">
+    <h2>This is the Header</h2>
+  </header>
+    <section>
+    <button type="button" onclick="showDay()">
+      Click me to display the day.
+    </button>
+
+    <p id="demo"></p>
+  </section>
+
+  <section style="padding: 20px;">
+    <p>This is the main section of the page.</p>
+
+     <input type="text" id="num1" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter second number">
+    <br><br>
+
+    <button type="button" onclick="getSum()">Get sum</button>
+
+    <p id="sumResult"></p>
+
+    <button onclick="highlightHeader()">Highlight header</button>
+    <button onclick="highlightFooter()">Highlight footer</button>
+    <button onclick="clearHighlight()">Clear highlight</button>
+  </section>
+
+  <footer id="pageFooter" style="background-color: lightgray; padding: 20px;">
+    <p>This is the Footer</p>
+  </footer>
+
+  
+    <script>
+    function showDay() {
+      const today = new Date();
+      const day = today.toLocaleDateString("en-US", { weekday: "long" });
+      document.getElementById("demo").innerHTML = "Today is a " + day + "!";
+    }
+  
+    function highlightHeader() {
+      document.getElementById("pageHeader").style.backgroundColor = "lightblue";
+    }
+
+    function highlightFooter() {
+      document.getElementById("pageFooter").style.backgroundColor = "lightgreen";
+    }
+
+    function clearHighlight() {
+      document.getElementById("pageHeader").style.backgroundColor = "lightgray";
+      document.getElementById("pageFooter").style.backgroundColor = "lightgray";
+    }
+
+        function getSum() {
+      const n1 = Number(document.getElementById("num1").value);
+      const n2 = Number(document.getElementById("num2").value);
+      const sum = n1 + n2;
+
+      document.getElementById("sumResult").innerHTML =
+        "The sum of " + n1 + " and " + n2 + " is " + sum + ".";
+    }
+
+  </script>
+
+</body>
+</html>
+
+</html>
